@@ -1,0 +1,11 @@
+{
+  "name": "cft",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "set COMPOSE_CONVERT_WINDOWS_PATHS=1&& docker-compose up --build",
+    "restart": "npm run clean && npm run start",
+    "clean": "npm run rm && npm run rmi",
+    "rm": "docker rm -f log-gen-1 log-gen-2 logger",
+    "rmi": "docker rmi cft_log-gen-1 cft_log-gen-2 cft_logger"
+  }
+}

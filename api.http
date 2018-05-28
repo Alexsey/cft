@@ -1,0 +1,51 @@
+### FIRST LOGS GENERATOR
+### start first logs generator
+http://localhost:8081/start
+### stop first logs generator
+http://localhost:8081/stop
+
+### SECOND LOGS GENERATOR
+### start second logs generator
+http://localhost:8082/start
+### stop second logs generator
+http://localhost:8082/stop
+
+
+### LOGGER
+### get all stored logd
+http://localhost:8080/logs
+### start listening to first logs generator
+http://localhost:8080/start/log-gen-1
+### stop listening to first logs generator
+http://localhost:8080/stop/log-gen-1
+### get logs of first logs generator
+http://localhost:8080/logs/log-gen-1
+### get stdout logs of first logs generator
+http://localhost:8080/logs/log-gen-1/stdout
+### get stderr logs of first logs generator
+http://localhost:8080/logs/log-gen-1/stderr
+### start listening to second logs generator
+http://localhost:8080/start/log-gen-2
+### stop listening to second logs generator
+http://localhost:8080/stop/log-gen-2
+### get logs of second logs generator
+http://localhost:8080/logs/log-gen-2
+### get stdout logs of second logs generator
+http://localhost:8080/logs/log-gen-2/stdout
+### get stderr logs of second logs generator
+http://localhost:8080/logs/log-gen-2/stderr
+
+
+### INVALID RESUESTS
+### invalid request with bad method
+PUT http://localhost:8080/logs
+### invalid request with bad url
+http://localhost:8080/invalid
+### invalid container id
+http://localhost:8080/stop/invalid
+### invalid container id
+http://localhost:8080/start/invalid
+### invalid type
+http://localhost:8080/logs/log-gen-1/invalid
+### invalid container id
+http://localhost:8080/logs/invalid/stdout

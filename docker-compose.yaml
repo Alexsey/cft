@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  log-gen-1:
+    container_name: log-gen-1
+    build: ./logsGenerator
+    ports:
+      - 8081:80
+    environment:
+      PORT: 80
+      LOGS_PREFIX: first
+
+  log-gen-2:
+    container_name: log-gen-2
+    build: ./logsGenerator
+    ports:
+      - 8082:80
+    environment:
+      PORT: 80
+      LOGS_PREFIX: second
+
+  logger:
+    container_name: logger
+    build: ./logger
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8080:80
+    environment:
+      PORT: 80
+      STRICT: "true"
+      LOGS_FOLDER: /var/logs

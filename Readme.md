@@ -95,8 +95,6 @@ Each message is a prefix + stream type + current time. Where
 * stream type is "stdout" or "stderr"
 * current time in full ISO format
 
-`logger` cannot record logs of itself or another `logger`
-
 ##### Env vars configuration
 
 `LOGS_PREFIX` - specifies the prefix of the logs
@@ -109,6 +107,8 @@ Each message is a prefix + stream type + current time. Where
 ### Logger
 
 May record logs of other containers
+
+`logger` cannot record logs of itself or another `logger`
 
 ##### Env vars Configuration
 * `LOGS_FOLDER` - specified the location of the logs files

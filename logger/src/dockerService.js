@@ -47,7 +47,7 @@ function findContainerDataByName (containersData, name) {
         'com.docker.compose.service': service
       } = {}
     } = {}
-    ) =>
+  ) =>
     id.startsWith(name) || service == name || names.includes(name)
   )
 }
